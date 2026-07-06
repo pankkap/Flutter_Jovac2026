@@ -1,4 +1,6 @@
 import "package:flutter/material.dart";
+import "package:my_app/screens/Buttons/stateful_buttons.dart";
+import "package:my_app/screens/Buttons/stateless_buttons.dart";
 import "package:my_app/screens/align_widget.dart";
 import "package:my_app/screens/asset_image.dart";
 import "package:my_app/screens/card_widget.dart";
@@ -40,7 +42,9 @@ class MyApp extends StatelessWidget {
       // home:ListTileWidget()
       // home:CardWidget()
       // home:InkWellWidget()
-      home:ImageWidget()
+      // home:ImageWidget()
+      // home:StatelessButtonsWidget()
+      home:SwitchButton()
     );
   }
 }
