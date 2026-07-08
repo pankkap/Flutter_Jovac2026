@@ -1,27 +1,12 @@
 import "package:flutter/material.dart";
-import "package:my_app/screens/Buttons/stateful_buttons.dart";
-import "package:my_app/screens/Buttons/stateless_buttons.dart";
-import "package:my_app/screens/Navigation/home_screen.dart";
+import "package:my_app/screens/Navigation/bottom_navigation.dart";
+import "package:my_app/screens/Navigation/drawer_navigation.dart";
+import "package:my_app/screens/Navigation/pass_data_screen1.dart";
 import "package:my_app/screens/Navigation/push_navigation.dart";
 import "package:my_app/screens/Navigation/screen1.dart";
 import "package:my_app/screens/Navigation/screen2.dart";
 import "package:my_app/screens/Navigation/screen3.dart";
-import "package:my_app/screens/align_widget.dart";
-import "package:my_app/screens/asset_image.dart";
-import "package:my_app/screens/card_widget.dart";
-import "package:my_app/screens/container_widget.dart";
-import "package:my_app/screens/expanded_widget.dart";
-import "package:my_app/screens/flexible_widget.dart";
-import "package:my_app/screens/inkwell_widget.dart";
-import "package:my_app/screens/listtileview.dart";
-import "package:my_app/screens/listview_widget.dart";
-import "package:my_app/screens/row_column_widgets.dart";
-import "package:my_app/screens/safearea_widget.dart";
-import "package:my_app/screens/spacer.dart";
-import "package:my_app/screens/stack_widget.dart";
-import "package:my_app/screens/statefull_widget.dart";
-import "package:my_app/screens/stateless_widget.dart";
-import "package:my_app/screens/wrap_widget.dart";
+import "package:my_app/screens/Navigation/tabbar_navigation.dart";
 
 void main(){
   runApp(MyApp());
@@ -51,7 +36,11 @@ class MyApp extends StatelessWidget {
       // home:StatelessButtonsWidget()
       // home:StatefulButtons()
       // home:HomeScreen(),
-      home:PushNvaigation1(),
+      // home:PushNvaigation1(),
+      // home:DrawerNavigationWidget(),
+      // home:BottomNavigationWidget(),
+      // home:TabbarNavigationWidget(),
+      home:PassingDataScreen1(),
       routes: {
         'S1':(context) => Screen1(),
         'S2':(context) => Screen2(),
