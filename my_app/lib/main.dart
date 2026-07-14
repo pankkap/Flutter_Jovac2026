@@ -1,20 +1,9 @@
 import "package:flutter/material.dart";
-import "package:my_app/screens/BottomSheet/model_bottomsheet.dart";
-import "package:my_app/screens/Form/calculator.dart";
-import "package:my_app/screens/Form/formfield.dart";
-import "package:my_app/screens/Form/textfield_widget.dart";
-import "package:my_app/screens/Navigation/bottom_navigation.dart";
-import "package:my_app/screens/Navigation/drawer_navigation.dart";
-import "package:my_app/screens/Navigation/pass_data_screen1.dart";
-import "package:my_app/screens/Navigation/push_navigation.dart";
 import "package:my_app/screens/Navigation/screen1.dart";
 import "package:my_app/screens/Navigation/screen2.dart";
 import "package:my_app/screens/Navigation/screen3.dart";
-import "package:my_app/screens/Navigation/tabbar_navigation.dart";
-import "package:my_app/screens/UI%20Widgets/SnackbarWidget/notifications_widgets.dart";
-import "package:my_app/screens/UI%20Widgets/DialogBox/alert_dialog.dart";
-import "package:my_app/screens/UI%20Widgets/Tables/table_widget.dart";
-
+import "package:my_app/screens/UIWidgets/ImportandWIdgets/web_view.dart";
+import "package:my_app/screens/UIWidgets/ImportandWIdgets/all_pickers.dart";
 void main(){
   runApp(MyApp());
 }
@@ -54,7 +43,11 @@ class MyApp extends StatelessWidget {
       // home:AlertDialogWidget(),
       // home:NotificationsWidgets(),
       // home:BottomSheetWidget(),
-      home:TableWidget(),
+      // home:TableWidget(),
+      // home:DataTableWidge(),
+      home:WebViewWidgetDemo(),
+      // home:PickerDemoWidget(),
+      
       routes: {
         'S1':(context) => Screen1(),
         'S2':(context) => Screen2(),
