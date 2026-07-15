@@ -14,11 +14,9 @@ class _PickerDemoWidgetState extends State<PickerDemoWidget> {
   TimeOfDay? selectedTime;
 
   String fileName = "No File Selected";
-  double rating = 3.0;
+  double rating = 0.0;
 
-  //------------------------------------
   // Date Picker
-  //------------------------------------
 
   Future<void> pickDate() async {
     DateTime? date = await showDatePicker(
@@ -40,9 +38,7 @@ class _PickerDemoWidgetState extends State<PickerDemoWidget> {
     }
   }
 
-  //------------------------------------
   // Time Picker
-  //------------------------------------
 
   Future<void> pickTime() async {
     TimeOfDay? time = await showTimePicker(
@@ -60,9 +56,7 @@ class _PickerDemoWidgetState extends State<PickerDemoWidget> {
     }
   }
 
-  //------------------------------------
   // File Picker
-  //------------------------------------
 
   Future<void> pickFile() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles();
@@ -70,6 +64,7 @@ class _PickerDemoWidgetState extends State<PickerDemoWidget> {
     if (result != null) {
       setState(() {
         fileName = result.files.single.name;
+        
       });
 
       print("File : $fileName");
@@ -94,9 +89,7 @@ class _PickerDemoWidgetState extends State<PickerDemoWidget> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
 
           children: [
-            //------------------------------------
             // Date Picker
-            //------------------------------------
             ElevatedButton.icon(
               onPressed: pickDate,
 
@@ -117,9 +110,7 @@ class _PickerDemoWidgetState extends State<PickerDemoWidget> {
 
             const Divider(height: 40),
 
-            //------------------------------------
             // Time Picker
-            //------------------------------------
             ElevatedButton.icon(
               onPressed: pickTime,
 
@@ -140,15 +131,13 @@ class _PickerDemoWidgetState extends State<PickerDemoWidget> {
 
             const Divider(height: 40),
 
-            //------------------------------------
             // File Picker
-            //------------------------------------
             ElevatedButton.icon(
               onPressed: pickFile,
 
               icon: const Icon(Icons.upload_file),
 
-              label: const Text("Choose File"),
+              label: const Text("Upload File"),
             ),
 
             const SizedBox(height: 10),
@@ -157,9 +146,7 @@ class _PickerDemoWidgetState extends State<PickerDemoWidget> {
 
             const Divider(height: 40),
 
-            //------------------------------------
             // Rating Bar
-            //------------------------------------
             const Text(
               "Rate this App",
 
@@ -170,31 +157,22 @@ class _PickerDemoWidgetState extends State<PickerDemoWidget> {
 
             RatingBar.builder(
               initialRating: rating,
-
               minRating: 1,
-
               allowHalfRating: true,
-
               itemCount: 5,
-
               itemBuilder: (context, index) {
-                return const Icon(Icons.star, color: Colors.amber);
+                return const Icon(Icons.star, color: Color.fromARGB(255, 7, 255, 48));
               },
-
               onRatingUpdate: (value) {
                 setState(() {
                   rating = value;
                 });
-
                 print("Rating : $rating");
               },
             ),
-
             const SizedBox(height: 15),
-
             Text(
               "Current Rating : $rating",
-
               style: const TextStyle(fontSize: 18),
             ),
           ],

@@ -16,13 +16,13 @@ void initState() {
   super.initState();
 
   controller = WebViewController()
-  ..setJavaScriptMode(JavaScriptMode.unrestricted)
+  ..setJavaScriptMode(JavaScriptMode.unrestricted);
 
-  // loadHtml();
+  loadHtml();
 
-  ..loadRequest(
-    Uri.parse("https://google.com"),
-  );
+  // ..loadRequest(
+  //   Uri.parse("https://google.com"),
+  // );
 }
 
 

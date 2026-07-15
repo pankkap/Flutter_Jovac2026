@@ -1,10 +1,18 @@
 import "package:flutter/material.dart";
+import "package:hive_flutter/hive_flutter.dart";
+
+import "package:my_app/screens/Databases/hive_database.dart";
+import "package:my_app/screens/Databases/shared_preferences.dart";
 import "package:my_app/screens/Navigation/screen1.dart";
 import "package:my_app/screens/Navigation/screen2.dart";
 import "package:my_app/screens/Navigation/screen3.dart";
-import "package:my_app/screens/UIWidgets/ImportandWIdgets/web_view.dart";
-import "package:my_app/screens/UIWidgets/ImportandWIdgets/all_pickers.dart";
-void main(){
+
+void main() async{
+  // Hive Database to be integrate with Flutter Application
+  WidgetsFlutterBinding.ensureInitialized();
+  await Hive.initFlutter();
+  await Hive.openBox("studentBox");
+
   runApp(MyApp());
 }
 
@@ -45,8 +53,10 @@ class MyApp extends StatelessWidget {
       // home:BottomSheetWidget(),
       // home:TableWidget(),
       // home:DataTableWidge(),
-      home:WebViewWidgetDemo(),
+      // home:WebViewWidgetDemo(),
       // home:PickerDemoWidget(),
+      // home:SharedPreferenceDemo(),
+      home:HiveDatabaseDemo(),
       
       routes: {
         'S1':(context) => Screen1(),
