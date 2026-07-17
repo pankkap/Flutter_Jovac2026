@@ -85,11 +85,13 @@ class _SharedPreferenceDemoState extends State<SharedPreferenceDemo> {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(content: Text("Data Saved"))
     );
+    // Clear out data from the Text Fields
      setState(() {
        nameController.text = "";
        emailController.text = "";
        isRemember = false;
      });
+     loadData();
   }
 
   Future<void> loadData() async{

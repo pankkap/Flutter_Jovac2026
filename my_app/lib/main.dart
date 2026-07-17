@@ -2,7 +2,7 @@ import "package:flutter/material.dart";
 import "package:hive_flutter/hive_flutter.dart";
 
 import "package:my_app/screens/Databases/hive_database.dart";
-import "package:my_app/screens/Databases/shared_preferences.dart";
+import "package:my_app/screens/Databases/sqlite_database.dart";
 import "package:my_app/screens/Navigation/screen1.dart";
 import "package:my_app/screens/Navigation/screen2.dart";
 import "package:my_app/screens/Navigation/screen3.dart";
@@ -56,8 +56,10 @@ class MyApp extends StatelessWidget {
       // home:WebViewWidgetDemo(),
       // home:PickerDemoWidget(),
       // home:SharedPreferenceDemo(),
-      home:HiveDatabaseDemo(),
+      // home:HiveDatabaseDemo(), 
+      home:SQLiteDatabaseDemo(), 
       
+  
       routes: {
         'S1':(context) => Screen1(),
         'S2':(context) => Screen2(),
