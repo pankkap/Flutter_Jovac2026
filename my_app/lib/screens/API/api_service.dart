@@ -4,7 +4,8 @@ import 'package:my_app/screens/API/model/user.dart';
 import "package:http/http.dart" as http;
 class ApiService{
   static const String baseUrl = 
-  "https://jsonplaceholder.typicode.com/users";
+  // "https://jsonplaceholder.typicode.com/users";
+  "http://172.20.10.4:3000/api/users";
   
 
 
@@ -37,46 +38,67 @@ class ApiService{
   }
 
   // Post New User
-static Future<User> createUser(User user) async{
+static Future<User> createUser(
+      User user) async {
+
     final response = await http.post(
+
       Uri.parse(baseUrl),
-      headers:{
-        "Content-type":"application/json"
+
+      headers: {
+        "Content-Type": "application/json",
       },
-      body:{
-        jsonEncode(user.toJson())
-      }
+
+      body: jsonEncode(
+        user.toJson(),
+      ),
+
     );
 
-    if(response.statusCode ==201)
-    {
-        return User.fromJson(jsonDecode(response.body));
-          
-    }else{
-      throw Exception("Failed to Create user");
-    }    
+    if (response.statusCode == 201) {
+
+      return User.fromJson(
+        jsonDecode(response.body),
+      );
+
+    } else {
+
+      throw Exception("Failed to Create User");
+
+    }
   }
  
  // Update the User
-  static Future<User> updateUser(User user) async{
+ static Future<User> updateUser(
+      User user) async {
+
     final response = await http.put(
+
       Uri.parse("$baseUrl/${user.id}"),
-      headers:{
-        "Content-type":"application/json"
+
+      headers: {
+        "Content-Type": "application/json",
       },
-      body:{
-        jsonEncode(user.toJson())
-      }
+
+      body: jsonEncode(
+        user.toJson(),
+      ),
+
     );
 
-    if(response.statusCode ==200)
-    {
-        return User.fromJson(jsonDecode(response.body));
-          
-    }else{
-      throw Exception("Failed to Update user");
-    }    
+    if (response.statusCode == 200) {
+
+      return User.fromJson(
+        jsonDecode(response.body),
+      );
+
+    } else {
+
+      throw Exception("Failed to Update User");
+
+    }
   }
+
 
   // Delete the user
   static Future<bool> deleteUser(int id) async{

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/screens/API/add_edit_user_screen.dart';
 import 'package:my_app/screens/API/api_service.dart';
 import 'package:my_app/screens/API/model/user.dart';
 import 'package:my_app/screens/API/user_details_screen.dart';
@@ -67,7 +68,19 @@ class _APIHomeScreenState extends State<APIHomeScreen> {
             ),
           );
         }
-        )
+        ),
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
+          child: Icon(Icons.add),
+          onPressed: () async{
+            final result = await Navigator.push(context, MaterialPageRoute(builder: (context)=>AddEditUserScreen()));
+            if(result == true)
+            {
+              await loadUsers();
+            }
+          },
+        ),
     );
   }
 }
