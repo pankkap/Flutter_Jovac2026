@@ -4,8 +4,8 @@ import 'package:my_app/screens/API/model/user.dart';
 import "package:http/http.dart" as http;
 class ApiService{
   static const String baseUrl = 
-  // "https://jsonplaceholder.typicode.com/users";
-  "http://192.168.85.226:3000/api/users";
+  "https://jsonplaceholder.typicode.com/users";
+  
 
 
   // Get All Users
@@ -29,7 +29,7 @@ class ApiService{
     final response = await http.get(Uri.parse("$baseUrl/$id"));
     if(response.statusCode ==200)
     {
-            
+        print("Calling API...");      
         return User.fromJson(jsonDecode(response.body));
     }else{
       throw Exception("Failed to load user");
